@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * Main - Entry point
+ * main - Entry point
  *
- * Description: 'main is the entry point for all c program'
+ * Description: 'main function is used as an entry point in all c programs'
  *
- * Return: Always 0 (success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
