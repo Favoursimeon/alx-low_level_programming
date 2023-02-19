@@ -1,15 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
+/* more headers goes */
 
-/*
- * This is a the main function
- * It generate a random number and output if
- * or negative
- * betty style doc for function main goes there
+
+/**
+ * main - Determines if a number is positive, negative or zero.
+ *
+ * Return: Always 0 (success)
  */
-
 int main(void)
 {
 	/* main function */
