@@ -1,15 +1,21 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    char *str;
+ * puts2 - prints a string, followed by a new line,
+ * @str: pointer to the string to print
+ * Return: void
+*/
 
-    str = "0123456789";
-    puts2(str);
-    return (0);
+void puts2(char *str)
+{
+int i = 0;
+while (str[i] != '\0')
+{
+	if (i % 2 == 0)
+	{
+		_putchar(str[i]);
+	}
+
+	i++;
+}
+_putchar('\n');
 }
