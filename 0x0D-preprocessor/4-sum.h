@@ -1,4 +1,4 @@
-#ifndef ABS_DEF
-#define ABS_DEF
-#define ABS(x) (x > 0 ? (x) : (x) * -1)
-#endif /* end ABS_DEF */
+#ifndef SUM_DEF
+#define SUM_DEF
+#define SUM(x, y) (x + y)
+#endif /*end SUM_DEF*/
