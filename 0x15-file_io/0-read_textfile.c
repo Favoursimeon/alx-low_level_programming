@@ -1,45 +1,43 @@
-#include "holberton.h"
+#include "main.h"
+#include <stdlib.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output
- * @filename: pointer to the file name
- * @letters: the number of letters it should read and print
- * Return:  the actual number of letters it could read and print
-*/
+ * read_textfile - A text file and prints it to POSIX stdout.
+ *
+ * Description:
+ * @filename: file name pointer
+ * @letters: letter number needed to be read
+ *
+ * Return: letter numbers read and printed, or 0 (failure)
+ *
+ */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	ssize_t file, rdCount, wrCount;
+	char *buffer;
 
-int file;
-ssize_t rcount, wcount;
-char *buffer;
+	if (filename == NULL)
+		return (0);
 
-if (filename == NULL)
-	return (0);
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
 
-file = open(filename, O_RDWR);
-if (file == -1)
-	return (0);
+	file = open(filename, O_RDONLY);
+	rdCount = read(file, buffer, letters);
+	wrCount = write(STDOUT_FILENO, buffer, rdCount);
 
-buffer = malloc(sizeof(char) * letters);
-if (buffer == NULL)
-{
+	if (file == -1 || rdCount == -1 || wrCount == -1 || wrCount != rdCount)
+	{
+		free(buffer);
+		return (0);
+	}
+
 	free(buffer);
-	return (0);
-}
+	close(file);
 
-rcount = read(file, buffer, letters);
-if (rcount == -1)
-	return (0);
-
-wcount = write(STDOUT_FILENO, buffer, rcount);
-
-if (wcount == -1 || rcount != wcount)
-	return (0);
-
-free(buffer);
-
-close(file);
-
-return (wcount);
+	return (wrCount);
 }
