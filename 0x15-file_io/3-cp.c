@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 
 #define MAXSIZE 1204
@@ -6,8 +6,11 @@
 
 /**
  * main - create the copy bash script
+ *
+ * Description:
  * @ac: argument count
  * @av: arguments as strings
+ *
  * Return: 0
  */
 int main(int ac, char *av[])
